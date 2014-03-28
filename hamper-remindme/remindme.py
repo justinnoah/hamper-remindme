@@ -41,7 +41,7 @@ class Reminder(ChatCommandPlugin):
         if not reminder.canceled:
             bot.notice(user, 'Reminder: ' + message)
 
-        reminder.delete()
+        self.db.session.delete(reminder)
         self.db.session.commit()
 
 
