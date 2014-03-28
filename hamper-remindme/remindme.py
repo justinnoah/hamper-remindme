@@ -75,7 +75,7 @@ class Reminder(ChatCommandPlugin):
         name = 'cancel'
         regex = r'^cancel \"(.+)\"$'
 
-        short_desc = '!cancel - cancel\'s a previous reminder.'
+        short_desc = '!cancel <message> - cancel\'s a previous reminder.'
 
         def command(self, bot, comm, groups):
             print "intercepted cancel command!"
