@@ -47,7 +47,7 @@ class Reminder(ChatCommandPlugin):
 
     class RemindMe(Command):
         name = 'remindme'
-        regex = r'^remindme \"(.+)\" \"(.+)\"$'
+        regex = r'^remindme (\d+) (.+)'
 
         short_desc = ('!remindme <minutes> <message>')
 
