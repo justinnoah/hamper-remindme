@@ -9,7 +9,7 @@ setup(
     packages=['hamper-remindme'],
     author='Dean Johnson',
     author_email='deanjohnson222@gmail.com',
-    url='https://github.com/johnsdea/hamper-remindme',
+    url='https://github.com/dean/hamper-remindme',
     install_requires=requirements,
     package_data={'hamper-remindme': ['requirements.txt', 'README.md', 'LICENSE']}
 )
