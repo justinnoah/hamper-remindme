@@ -56,19 +56,23 @@ class Reminder(ChatCommandPlugin):
 
             # reactor.callLater takes it's arguments as floats.
             duration = float(groups[0])
-            message = groups[1]
+            if duration and (duration == abs(duration):
+                message = groups[1]
 
-            db = self.plugin.db
-            args = (bot, comm['user'], message)
-            reactor.callLater(duration * 60, self.plugin.remind, *args)
+                db = self.plugin.db
+                args = (bot, comm['user'], message)
+                reactor.callLater(duration * 60, self.plugin.remind, *args)
 
-            reminder = ReminderTable(user=comm['user'],
+                reminder = ReminderTable(user=comm['user'],
                                      message=message)
-            db.session.add(reminder)
-            db.session.commit()
+                db.session.add(reminder)
+                db.session.commit()
 
-            bot.reply(comm, "{0} has set a reminder to {1} in {2} minutes."
-                                .format(comm['user'], message, str(duration)))
+                bot.reply(comm, "{0} has set a reminder to {1} in {2} minutes."
+                                    .format(comm['user'], message, str(duration)))
+            else:
+                bot.reply(comm, "{0}, {1} is an invalid reminder duration."
+                                    .format(comm['user'], str(duration))
 
 
     class Cancel(Command):
